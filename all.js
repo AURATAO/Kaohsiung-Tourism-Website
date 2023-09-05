@@ -51,7 +51,7 @@ function displayData(){
             <p>${item.Zone}</p>
     </div>
     <div class = "areaInfo">
-        <ul>
+        <ul class="areaList">
         <li><img class="icon" src="img/icons_clock.png" alt="clock">${item.Opentime}</li>
         <li><img class="icon" src="img/icons_pin.png" alt="pin">${item.Add}</li>
         <li><img class="icon" src="img/icons_phone.png" alt="clock">${item.Tel}</li>
@@ -91,20 +91,20 @@ function clickChangeContent(e){
     let content = ` <li>
     <div class = "areaContent">
         <div class="area_image" style = "background : url(${item.Picture1}) center / cover">
-            <h3>${item.Name}</h3>
-            <p>${item.Zone}</p>
+        <h3>${item.Name}</h3>
+        <p>${item.Zone}</p>
     </div>
     <div class = "areaInfo">
-        <ul>
-        <li><img class="icon" src="img/icons_clock.png" alt="clock">${item.Opentime}</li>
-        <li><img class="icon" src="img/icons_pin.png" alt="pin">${item.Add}</li>
-        <li><img class="icon" src="img/icons_phone.png" alt="clock">${item.Tel}</li>
+        <ul class="areaList">
+        <li><img class="icon" src="img/icons_clock.png" alt="clock">${item.Opentime }</li>
+        <li><img class="icon" src="img/icons_pin.png" alt="pin">${item.Add }</li>
+        <li><img class="icon" src="img/icons_phone.png" alt="clock">${item.Tel }</li>
         </ul>
       </div>
     </div>
   </li>`;
 
-  strSelected+=content;
+  strSelected += content;
   list.innerHTML = strSelected;
   mainTitle.textContent = item.Zone; //注意這！
   }else if( e.target.value === '全部'){
