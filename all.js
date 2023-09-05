@@ -44,11 +44,15 @@ mainTitle.innerHTML = zone;  //why isn't a selectZone;
 function displayData(){
   let str = '';
   localData.forEach(item => {
-    str += ` <li>
+    str += ` <li class="area__card">
     <div class = "areaContent">
         <div class="area_image" style = "background : url(${item.Picture1}) center / cover">
-            <h3>${item.Name}</h3>
-            <p>${item.Zone}</p>
+          <div class="area__bgGradient">  
+            <div>  
+              <h3>${item.Name}</h3>
+              <p>${item.Zone}</p>
+            </div>
+          </div>  
     </div>
     <div class = "areaInfo">
         <ul class="areaList">
