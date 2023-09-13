@@ -28,14 +28,14 @@ function getData () {fetch('https://raw.githubusercontent.com/hexschool/KCGTrave
 function filterArea(zone){
 let selectZone = [];
 localData.forEach(item => {
-  if(item.Zone === zone ) {
+ if (item.Zone === zone ){
     selectZone.push(item)
-  } else if (item.Zone === '請選擇行政區'){
-    selectZone.push(item)
+  }else if(item.Zone === '全部'){
+    selectZone.push(item);
   }
 });
 
-mainTitle.innerHTML = zone;  //why isn't a selectZone;
+mainTitle.innerHTML = zone;  //why isn't a selectZone; // different innerHTML and textContent
 }
 
 
@@ -59,6 +59,7 @@ function displayData(){
         <li><img class="icon" src="img/icons_clock.png" alt="clock">${item.Opentime}</li>
         <li><img class="icon" src="img/icons_pin.png" alt="pin">${item.Add}</li>
         <li><img class="icon" src="img/icons_phone.png" alt="clock">${item.Tel}</li>
+        <li><img class="icon4" src="img/icons_tag.png" alt="tag">${item.Ticketinfo}</li>
         </ul>
       </div>
     </div>
@@ -103,6 +104,7 @@ function clickChangeContent(e){
         <li><img class="icon" src="img/icons_clock.png" alt="clock">${item.Opentime }</li>
         <li><img class="icon" src="img/icons_pin.png" alt="pin">${item.Add }</li>
         <li><img class="icon" src="img/icons_phone.png" alt="clock">${item.Tel }</li>
+        <li><img class="icon4" src="img/icons_tag.png" alt="tag">${item.Ticketinfo}</li>
         </ul>
       </div>
     </div>
@@ -113,6 +115,7 @@ function clickChangeContent(e){
   mainTitle.textContent = item.Zone; //注意這！
   }else if( e.target.value === '全部'){
     displayData();
+    mainTitle.textContent = '高雄各區';
   }
 })
 }
